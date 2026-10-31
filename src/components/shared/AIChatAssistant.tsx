@@ -94,24 +94,24 @@ export const AIChatAssistant: React.FC = () => {
       {isOpen && (
         <div className="w-80 sm:w-96 bg-white rounded-2xl shadow-modal border border-slate-200 overflow-hidden flex flex-col max-h-[520px] transition-all animate-float">
           {/* Header */}
-          <div className="bg-slate-900 text-white p-4 flex items-center justify-between">
+          <div className="bg-mygov-blue text-white p-4 flex items-center justify-between">
             <div className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-xl bg-parikalp-primary flex items-center justify-center text-white font-bold text-sm shadow-xs">
-                <Bot className="w-5 h-5" />
+              <div className="w-9 h-9 rounded-xl bg-white/15 flex items-center justify-center text-white font-bold text-sm shadow-xs border border-white/20">
+                <Bot className="w-5 h-5 text-amber-300" />
               </div>
               <div>
                 <div className="flex items-center gap-1.5">
                   <h4 className="font-bold text-xs text-white">PARIKALP Regulatory AI</h4>
                   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                 </div>
-                <p className="text-[10px] text-slate-400">
+                <p className="text-[10px] text-blue-100">
                   AICTE APH 2026-27 Knowledge Assistant
                 </p>
               </div>
             </div>
             <button
               onClick={() => setIsOpen(false)}
-              className="text-slate-400 hover:text-white p-1 rounded-lg hover:bg-slate-800 transition-colors"
+              className="text-white/70 hover:text-white p-1 rounded-lg hover:bg-white/10 transition-colors"
             >
               <X className="w-4 h-4" />
             </button>
@@ -207,10 +207,10 @@ export const AIChatAssistant: React.FC = () => {
         </div>
       )}
 
-      {/* Floating Launcher Button */}
+      {/* Floating Launcher Button in MyGov Vibrant Orange */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-14 h-14 rounded-full bg-parikalp-primary text-white flex items-center justify-center shadow-elevated hover:scale-105 transition-transform relative group"
+        className="w-14 h-14 rounded-full bg-mygov-orange hover:bg-orange-600 text-white flex items-center justify-center shadow-elevated hover:scale-105 transition-transform relative group"
         title="Open PARIKALP Regulatory AI Assistant"
       >
         <MessageCircle className="w-6 h-6" />

@@ -23,6 +23,22 @@ export default {
           darkborder: '#1E3E68',
           accent: '#5C8F6A',
           warm: '#C97B4B',
+        },
+        mygov: {
+          blue: '#0B4F8A',
+          darkblue: '#083B66',
+          navy: '#0B2545',
+          orange: '#F37021',
+          saffron: '#FF9933',
+          green: '#008751',
+          lightgreen: '#E8F5E9',
+          lightblue: '#EBF4FC',
+          warmbg: '#F8FAFC',
+          surface: '#FFFFFF',
+          border: '#E2E8F0',
+          gold: '#FDB813',
+          text: '#1A2E44',
+          muted: '#5A6E85',
         }
       },
       fontFamily: {

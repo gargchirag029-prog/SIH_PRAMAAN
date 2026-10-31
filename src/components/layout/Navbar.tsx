@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { useParikalpData } from '../../context/ParikalpDataContext';
+import { useAccessibility } from '../../context/AccessibilityContext';
 import {
   Bell,
   Search,
@@ -19,6 +20,7 @@ import {
 export const Navbar: React.FC<{ onToggleSidebar: () => void }> = ({ onToggleSidebar }) => {
   const { user, role, switchRole } = useAuth();
   const { alerts, applications } = useParikalpData();
+  const { language, t } = useAccessibility();
   const navigate = useNavigate();
 
   const [searchQuery, setSearchQuery] = useState('');
@@ -50,20 +52,20 @@ export const Navbar: React.FC<{ onToggleSidebar: () => void }> = ({ onToggleSide
             </button>
 
             <Link to="/" className="flex items-center gap-3 group">
-              <div className="w-10 h-10 rounded-xl bg-parikalp-primary flex items-center justify-center text-white font-bold text-lg shadow-sm group-hover:bg-blue-800 transition-colors">
-                P
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-mygov-blue to-mygov-navy flex items-center justify-center text-white font-black text-xl shadow-sm border border-blue-400/20 group-hover:scale-105 transition-transform">
+                प
               </div>
               <div>
                 <div className="flex items-center gap-2">
-                  <span className="text-xl font-extrabold text-parikalp-navy tracking-tight">
+                  <span className="text-xl font-extrabold text-mygov-navy tracking-tight">
                     PARIKALP
                   </span>
-                  <span className="bg-parikalp-lightblue text-parikalp-primary text-[10px] font-bold px-2 py-0.5 rounded-full border border-blue-200">
-                    AICTE 2026
+                  <span className="bg-orange-100 text-mygov-orange text-[10px] font-black px-2 py-0.5 rounded-full border border-orange-200">
+                    AICTE • MyGov
                   </span>
                 </div>
                 <p className="text-[11px] text-slate-500 font-medium tracking-tight line-clamp-1">
-                  Workflow Automation & Continuous Compliance
+                  परिकल्प • Institutional Approval & Continuous Compliance Ecosystem
                 </p>
               </div>
             </Link>
@@ -80,7 +82,7 @@ export const Navbar: React.FC<{ onToggleSidebar: () => void }> = ({ onToggleSide
                   type="text"
                   value={searchQuery}
                   onChange={e => setSearchQuery(e.target.value)}
-                  placeholder="Search Application Ref (e.g. APP-8492) or Institution..."
+                  placeholder={language === 'hi' ? 'आवेदन संदर्भ (उदा. APP-8492) या संस्थान खोजें...' : 'Search Application Ref (e.g. APP-8492) or Institution...'}
                   className="block w-full pl-9 pr-3 py-1.5 border border-slate-300 rounded-lg text-xs placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-parikalp-primary/20 focus:border-parikalp-primary bg-slate-50/50 hover:bg-white transition-colors"
                 />
               </div>
@@ -96,7 +98,7 @@ export const Navbar: React.FC<{ onToggleSidebar: () => void }> = ({ onToggleSide
                 className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-parikalp-primary bg-parikalp-lightblue hover:bg-blue-100 transition-colors"
               >
                 <PlusCircle className="w-4 h-4" />
-                <span>Quick Actions</span>
+                <span>{language === 'hi' ? 'त्वरित कार्य' : 'Quick Actions'}</span>
                 <ChevronDown className="w-3.5 h-3.5" />
               </button>
 
@@ -110,28 +112,28 @@ export const Navbar: React.FC<{ onToggleSidebar: () => void }> = ({ onToggleSide
                     className="flex items-center gap-2.5 px-4 py-2 text-slate-700 hover:bg-slate-50 font-medium"
                   >
                     <PlusCircle className="w-4 h-4 text-blue-600" />
-                    Submit New Application
+                    <span>{language === 'hi' ? 'नया आवेदन करें' : 'Submit New Application'}</span>
                   </Link>
                   <Link
                     to="/scrutiny"
                     className="flex items-center gap-2.5 px-4 py-2 text-slate-700 hover:bg-slate-50 font-medium"
                   >
                     <FileCheck2 className="w-4 h-4 text-emerald-600" />
-                    Open Scrutiny Queue
+                    <span>{language === 'hi' ? 'संवीक्षा कतार खोलें' : 'Open Scrutiny Queue'}</span>
                   </Link>
                   <Link
                     to="/evc"
                     className="flex items-center gap-2.5 px-4 py-2 text-slate-700 hover:bg-slate-50 font-medium"
                   >
                     <Calendar className="w-4 h-4 text-indigo-600" />
-                    Schedule EVC Inspection
+                    <span>{language === 'hi' ? 'EVC निरीक्षण निर्धारित करें' : 'Schedule EVC Inspection'}</span>
                   </Link>
                   <Link
                     to="/verification"
                     className="flex items-center gap-2.5 px-4 py-2 text-slate-700 hover:bg-slate-50 font-medium"
                   >
                     <ShieldCheck className="w-4 h-4 text-amber-600" />
-                    AI Document Verification
+                    <span>{language === 'hi' ? 'एआई दस्तावेज़ सत्यापन' : 'AI Document Verification'}</span>
                   </Link>
                 </div>
               )}
@@ -208,14 +210,15 @@ export const Navbar: React.FC<{ onToggleSidebar: () => void }> = ({ onToggleSide
               )}
             </div>
 
-            {/* RBAC Multi-Portal Login Link */}
+            {/* MyGov-style MeriPehchan / RBAC SSO Login CTA */}
             <Link
               to="/login"
-              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-300 transition-colors"
-              title="Open full Role-Based Access Control Login & 2FA Simulator"
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-bold text-white bg-mygov-orange hover:bg-orange-600 shadow-sm transition-all hover:shadow-md transform active:scale-95"
+              title="National Single Sign-On / MeriPehchan RBAC Login"
             >
-              <KeyRound className="w-3.5 h-3.5 text-parikalp-primary" />
-              <span>RBAC Login</span>
+              <KeyRound className="w-3.5 h-3.5 text-white" />
+              <span className="hidden sm:inline">{language === 'hi' ? 'मेरी पहचान' : 'MeriPehchan'}</span>
+              <span>{language === 'hi' ? 'लॉगिन' : 'Login'}</span>
             </Link>
 
             {/* User Profile Pill & Dropdown */}

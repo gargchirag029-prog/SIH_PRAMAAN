@@ -1,10 +1,13 @@
 import React from 'react';
 import { useParikalpData } from '../../context/ParikalpDataContext';
+import { useAccessibility } from '../../context/AccessibilityContext';
 import { ShieldCheck, AlertTriangle, ArrowRight, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export const ComplianceWidget: React.FC = () => {
   const { complianceProfiles, documents } = useParikalpData();
+  const { language } = useAccessibility();
+  const isHi = language === 'hi';
 
   const totalDocs = documents.length;
   const validDocs = documents.filter(d => d.validityStatus === 'VALID').length;
@@ -23,37 +26,51 @@ export const ComplianceWidget: React.FC = () => {
             </div>
             <div>
               <h3 className="text-sm font-bold text-slate-800 uppercase tracking-wider">
-                Continuous Compliance Health
+                {isHi ? 'सतत अनुपालन स्वास्थ्य' : 'Continuous Compliance Health'}
               </h3>
-              <p className="text-xs text-slate-500">Post-approval statutory monitoring</p>
+              <p className="text-xs text-slate-500">
+                {isHi ? 'अनुमोदन पश्चात वैधानिक निगरानी' : 'Post-approval statutory monitoring'}
+              </p>
             </div>
           </div>
           <Link
             to="/compliance"
-            className="text-xs text-parikalp-primary font-semibold hover:underline flex items-center gap-1"
+            className="text-xs text-mygov-blue font-semibold hover:underline flex items-center gap-1"
           >
-            Full Matrix <ArrowRight className="w-3.5 h-3.5" />
+            {isHi ? 'पूरी सूची' : 'Full Matrix'} <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
 
         {/* Quick Numbers Grid */}
         <div className="grid grid-cols-3 gap-3 mb-4">
           <div className="bg-emerald-50/70 border border-emerald-200/80 p-3 rounded-lg text-center">
-            <span className="text-[10px] font-semibold text-emerald-800 uppercase block">Valid Docs</span>
+            <span className="text-[10px] font-semibold text-emerald-800 uppercase block">
+              {isHi ? 'वैध दस्तावेज़' : 'Valid Docs'}
+            </span>
             <span className="text-xl font-bold text-emerald-700">{validDocs}</span>
-            <span className="text-[10px] text-emerald-600 block">Verified Active</span>
+            <span className="text-[10px] text-emerald-600 block">
+              {isHi ? 'सक्रिय एवं सत्यापित' : 'Verified Active'}
+            </span>
           </div>
 
           <div className="bg-amber-50/70 border border-amber-200/80 p-3 rounded-lg text-center">
-            <span className="text-[10px] font-semibold text-amber-800 uppercase block">Expiring Soon</span>
+            <span className="text-[10px] font-semibold text-amber-800 uppercase block">
+              {isHi ? 'शीघ्र समाप्त' : 'Expiring Soon'}
+            </span>
             <span className="text-xl font-bold text-amber-700">{expiringSoonDocs}</span>
-            <span className="text-[10px] text-amber-600 block">&lt; 90 Days SLA</span>
+            <span className="text-[10px] text-amber-600 block">
+              {isHi ? '< 90 दिन शेष' : '< 90 Days SLA'}
+            </span>
           </div>
 
           <div className="bg-rose-50/70 border border-rose-200/80 p-3 rounded-lg text-center">
-            <span className="text-[10px] font-semibold text-rose-800 uppercase block">Overdue Action</span>
+            <span className="text-[10px] font-semibold text-rose-800 uppercase block">
+              {isHi ? 'अतिदेय मामले' : 'Overdue Action'}
+            </span>
             <span className="text-xl font-bold text-rose-700">{expiredDocs + overdueObligations}</span>
-            <span className="text-[10px] text-rose-600 block">Notice Issued</span>
+            <span className="text-[10px] text-rose-600 block">
+              {isHi ? 'नोटिस जारी' : 'Notice Issued'}
+            </span>
           </div>
         </div>
 
@@ -62,24 +79,36 @@ export const ComplianceWidget: React.FC = () => {
           <div className="p-2.5 bg-rose-50/60 rounded-lg border border-rose-100 flex items-start gap-2 text-rose-900">
             <AlertTriangle className="w-4 h-4 text-rose-600 flex-shrink-0 mt-0.5" />
             <div className="min-w-0 flex-1">
-              <span className="font-semibold block truncate">Fire Safety NOC Expired</span>
-              <span className="text-[11px] text-rose-700">Delhi Institute of Advanced Tech • Discrepancy Active</span>
+              <span className="font-semibold block truncate">
+                {isHi ? 'फायर सेफ्टी एनओसी समाप्त' : 'Fire Safety NOC Expired'}
+              </span>
+              <span className="text-[11px] text-rose-700">
+                {isHi
+                  ? 'दिल्ली इंस्टीट्यूट ऑफ एडवांस्ड टेक • विसंगति सक्रिय'
+                  : 'Delhi Institute of Advanced Tech • Discrepancy Active'}
+              </span>
             </div>
           </div>
 
           <div className="p-2.5 bg-amber-50/60 rounded-lg border border-amber-100 flex items-start gap-2 text-amber-900">
             <Clock className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" />
             <div className="min-w-0 flex-1">
-              <span className="font-semibold block truncate">FDR Joint Deposit Maturity</span>
-              <span className="text-[11px] text-amber-700">Maturity within 9 months • Lien renewal notice dispatched</span>
+              <span className="font-semibold block truncate">
+                {isHi ? 'एफडीआर संयुक्त सावधि जमा परिपक्वता' : 'FDR Joint Deposit Maturity'}
+              </span>
+              <span className="text-[11px] text-amber-700">
+                {isHi
+                  ? '9 महीने में परिपक्वता • नवीनीकरण नोटिस प्रेषित'
+                  : 'Maturity within 9 months • Lien renewal notice dispatched'}
+              </span>
             </div>
           </div>
         </div>
       </div>
 
       <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-        <span>Continuous Compliance: <strong>Automated Cron Active</strong></span>
-        <span className="text-emerald-600 font-semibold">Zero Fraud Tolerance</span>
+        <span>{isHi ? 'सतत अनुपालन:' : 'Continuous Compliance:'} <strong>{isHi ? 'स्वचालित क्रॉन सक्रिय' : 'Automated Cron Active'}</strong></span>
+        <span className="text-emerald-600 font-semibold">{isHi ? 'शून्य धोखाधड़ी नीति' : 'Zero Fraud Tolerance'}</span>
       </div>
     </div>
   );

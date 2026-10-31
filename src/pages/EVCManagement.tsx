@@ -3,6 +3,7 @@ import { useParikalpData } from '../context/ParikalpDataContext';
 import { StatusBadge } from '../components/shared/StatusBadge';
 import { EVCScheduleModal } from '../components/evc/EVCScheduleModal';
 import { EVCReportModal } from '../components/evc/EVCReportModal';
+import { CampusInfrastructureInspector } from '../components/shared/CampusInfrastructureInspector';
 import { EVCVisit } from '../types/evc';
 import { Application } from '../types/application';
 import {
@@ -235,6 +236,9 @@ export const EVCManagement: React.FC = () => {
           </div>
         )}
       </div>
+
+      {/* Interactive Campus & Laboratory Physical Inspector */}
+      <CampusInfrastructureInspector />
 
       {/* Modals */}
       <EVCScheduleModal

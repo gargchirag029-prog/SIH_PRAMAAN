@@ -23,21 +23,21 @@ export const BeforeAfterInspectionSlider: React.FC = () => {
   };
 
   return (
-    <div className="bg-slate-900 text-white rounded-2xl p-6 border border-slate-800 shadow-card space-y-4">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-3">
+    <div className="bg-white text-slate-800 rounded-2xl p-6 border border-slate-200 shadow-card space-y-4 font-sans">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-3">
         <div>
-          <span className="pill pill-accent text-[10px] py-0.5 mb-1.5 inline-block">
+          <span className="inline-block bg-orange-50 text-mygov-orange border border-orange-200 px-2.5 py-0.5 rounded-full text-[10px] font-bold mb-1.5">
             AI Forensic Inspection Comparison
           </span>
-          <h3 className="text-lg font-bold text-white tracking-tight">
+          <h3 className="text-lg font-bold text-slate-900 tracking-tight">
             Raw Scanned Document vs. AI-Extracted & Annotated Dossier
           </h3>
-          <p className="text-xs text-slate-400">
+          <p className="text-xs text-slate-500">
             Drag the slider horizontally to view how the PARIKALP AI vision engine detects date stamp anomalies and metadata fields.
           </p>
         </div>
         <div className="flex items-center gap-2 text-xs">
-          <span className="text-slate-400">Slider: {Math.round(sliderPosition)}%</span>
+          <span className="text-slate-500 font-medium">Position: {Math.round(sliderPosition)}%</span>
         </div>
       </div>
 
@@ -50,7 +50,7 @@ export const BeforeAfterInspectionSlider: React.FC = () => {
         onMouseMove={handleMouseMove}
         onTouchMove={handleTouchMove}
         onClick={e => handleMove(e.clientX)}
-        className="relative w-full h-80 sm:h-96 rounded-xl overflow-hidden cursor-ew-resize select-none border border-slate-700 bg-slate-950"
+        className="relative w-full h-80 sm:h-96 rounded-xl overflow-hidden cursor-ew-resize select-none border border-slate-300 bg-slate-100"
       >
         {/* RIGHT LAYER: AI-Annotated & Verified Result */}
         <div className="absolute inset-0 bg-white p-6 text-slate-800 flex flex-col justify-between font-sans">
@@ -145,18 +145,18 @@ export const BeforeAfterInspectionSlider: React.FC = () => {
         {/* Draggable Vertical Handle */}
         <div
           style={{ left: `${sliderPosition}%` }}
-          className="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize z-20 -translate-x-1/2 shadow-glow"
+          className="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize z-20 -translate-x-1/2 shadow-elevated"
         >
-          <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-white text-slate-900 flex items-center justify-center shadow-elevated border border-slate-300">
-            <ChevronsLeftRight className="w-4 h-4 text-parikalp-primary" />
+          <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-white text-slate-900 flex items-center justify-center shadow-md border border-slate-300">
+            <ChevronsLeftRight className="w-4 h-4 text-mygov-orange" />
           </div>
         </div>
 
         {/* Labels */}
-        <div className="absolute bottom-3 left-3 bg-slate-900/80 backdrop-blur-md px-2.5 py-1 rounded-full text-[10px] font-bold text-slate-300 z-10">
+        <div className="absolute bottom-3 left-3 bg-slate-900/80 backdrop-blur-md px-2.5 py-1 rounded-full text-[10px] font-bold text-slate-200 z-10">
           Raw Scanned Document
         </div>
-        <div className="absolute bottom-3 right-3 bg-parikalp-primary/90 backdrop-blur-md px-2.5 py-1 rounded-full text-[10px] font-bold text-white z-10">
+        <div className="absolute bottom-3 right-3 bg-mygov-orange/95 backdrop-blur-md px-2.5 py-1 rounded-full text-[10px] font-bold text-white z-10 shadow-xs">
           AI-Annotated Extraction
         </div>
       </div>

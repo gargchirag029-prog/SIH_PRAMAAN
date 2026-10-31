@@ -1,11 +1,14 @@
 import React from 'react';
 import { useParikalpData } from '../../context/ParikalpDataContext';
+import { useAccessibility } from '../../context/AccessibilityContext';
 import { StatusBadge } from '../shared/StatusBadge';
 import { Calendar, Users, MapPin, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export const EVCSummaryWidget: React.FC = () => {
   const { evcVisits } = useParikalpData();
+  const { language } = useAccessibility();
+  const isHi = language === 'hi';
 
   return (
     <div className="bg-white rounded-xl border border-slate-200 p-5 shadow-card flex flex-col justify-between">
@@ -17,16 +20,18 @@ export const EVCSummaryWidget: React.FC = () => {
             </div>
             <div>
               <h3 className="text-sm font-bold text-slate-800 uppercase tracking-wider">
-                EVC Monitoring & Visits
+                {isHi ? 'EVC निरीक्षण एवं निगरानी' : 'EVC Monitoring & Visits'}
               </h3>
-              <p className="text-xs text-slate-500">Expert Visit Committee physical audits</p>
+              <p className="text-xs text-slate-500">
+                {isHi ? 'विशेषज्ञ समिति भौतिक एवं लैब सत्यापन' : 'Expert Visit Committee physical audits'}
+              </p>
             </div>
           </div>
           <Link
             to="/evc"
-            className="text-xs text-parikalp-primary font-semibold hover:underline flex items-center gap-1"
+            className="text-xs text-mygov-blue font-semibold hover:underline flex items-center gap-1"
           >
-            Manage EVC <ArrowRight className="w-3.5 h-3.5" />
+            {isHi ? 'EVC प्रबंधन' : 'Manage EVC'} <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
 
@@ -51,11 +56,11 @@ export const EVCSummaryWidget: React.FC = () => {
               <div className="mt-2 pt-2 border-t border-slate-200/60 flex flex-wrap items-center justify-between gap-2 text-[11px] text-slate-600">
                 <span className="flex items-center gap-1">
                   <Calendar className="w-3 h-3 text-slate-400" />
-                  Visit Date: <strong className="text-slate-700">{visit.visitDate}</strong>
+                  {isHi ? 'दौरा तिथि:' : 'Visit Date:'} <strong className="text-slate-700">{visit.visitDate}</strong>
                 </span>
                 <span className="flex items-center gap-1">
                   <Users className="w-3 h-3 text-slate-400" />
-                  {visit.committeeMembers.length} Experts Assigned
+                  {visit.committeeMembers.length} {isHi ? 'विशेषज्ञ नियुक्त' : 'Experts Assigned'}
                 </span>
               </div>
             </div>
@@ -64,8 +69,8 @@ export const EVCSummaryWidget: React.FC = () => {
       </div>
 
       <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-        <span>Conflict-of-interest check: <strong className="text-emerald-600">Enforced</strong></span>
-        <span>Geotagging: <strong className="text-emerald-600">Mandatory</strong></span>
+        <span>{isHi ? 'हितों के टकराव जांच:' : 'Conflict-of-interest check:'} <strong className="text-emerald-600">{isHi ? 'सत्यापित' : 'Enforced'}</strong></span>
+        <span>{isHi ? 'जियोटैगिंग:' : 'Geotagging:'} <strong className="text-emerald-600">{isHi ? 'अनिवार्य' : 'Mandatory'}</strong></span>
       </div>
     </div>
   );

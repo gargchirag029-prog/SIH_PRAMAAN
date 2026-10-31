@@ -8,21 +8,31 @@ export const TickerBanner: React.FC = () => {
     { text: '🔒 SHA-256 cryptographic audit ledger active across 7 regional bureaus', badge: 'Zero Tampering' },
     { text: '📋 EVC inspection team constituted for Chennai Academy of Technology', badge: 'EVC Scheduled' },
     { text: '⚖️ Standing Appellate Committee (SAC) meeting M5 scheduled for Nov 2, 2026', badge: 'SAC Agenda' },
-    { text: '⚡ 92.4% on-time compliance adherence across technical institutions', badge: 'Compliance 2026' },
+    { text: '⚡ 96.8% on-time compliance adherence across technical institutions', badge: 'Compliance 2026' },
   ];
 
   return (
-    <div className="w-full overflow-hidden bg-slate-900 border-b border-slate-800 py-1.5 text-xs select-none">
-      <div className="flex animate-ticker whitespace-nowrap gap-12 text-slate-300">
-        {/* Double array for seamless infinite looping */}
-        {[...tickerItems, ...tickerItems].map((item, idx) => (
-          <div key={idx} className="inline-flex items-center gap-3">
-            <span className="text-[11px] font-medium text-slate-200">{item.text}</span>
-            <span className="text-[9px] font-bold px-2 py-0.5 rounded-full bg-parikalp-primary/40 text-sky-300 border border-sky-400/30 uppercase tracking-wider">
-              {item.badge}
-            </span>
+    <div className="w-full overflow-hidden bg-amber-50/90 border-b border-amber-200/80 py-2 text-xs select-none shadow-xs">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
+        {/* Fixed Title Tag in Official MyGov Orange */}
+        <div className="flex-shrink-0 flex items-center gap-1.5 bg-mygov-orange text-white text-[10px] font-extrabold px-3 py-1 rounded-md shadow-xs mr-4 uppercase tracking-wider">
+          <Sparkles className="w-3 h-3 text-amber-200" />
+          <span>Latest Updates</span>
+        </div>
+
+        {/* Marquee Ticker with clean readable dark text */}
+        <div className="overflow-hidden flex-1 relative">
+          <div className="flex animate-ticker whitespace-nowrap gap-12 text-slate-800">
+            {[...tickerItems, ...tickerItems].map((item, idx) => (
+              <div key={idx} className="inline-flex items-center gap-2.5">
+                <span className="text-[12px] font-medium text-slate-800">{item.text}</span>
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-white text-mygov-blue border border-blue-200 shadow-xs">
+                  {item.badge}
+                </span>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
     </div>
   );

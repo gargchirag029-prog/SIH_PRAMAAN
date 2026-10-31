@@ -25,18 +25,26 @@ export const MetricCard: React.FC<MetricCardProps> = ({
   onClick,
 }) => {
   const iconVariants = {
-    default: 'bg-parikalp-lightblue text-parikalp-primary',
-    primary: 'bg-blue-50 text-blue-600',
-    warning: 'bg-amber-50 text-amber-600',
+    default: 'bg-blue-50 text-mygov-blue',
+    primary: 'bg-sky-50 text-mygov-blue',
+    warning: 'bg-orange-50 text-mygov-orange',
     danger: 'bg-rose-50 text-rose-600',
-    success: 'bg-emerald-50 text-emerald-600',
+    success: 'bg-emerald-50 text-emerald-700',
+  };
+
+  const borderTopVariants = {
+    default: 'border-t-2 border-t-slate-300 hover:border-blue-300',
+    primary: 'border-t-2 border-t-mygov-blue hover:border-blue-500',
+    warning: 'border-t-2 border-t-mygov-orange hover:border-orange-500',
+    danger: 'border-t-2 border-t-rose-500 hover:border-rose-400',
+    success: 'border-t-2 border-t-mygov-green hover:border-emerald-500',
   };
 
   return (
     <div
       onClick={onClick}
-      className={`bg-white rounded-xl border border-slate-200/80 p-5 shadow-card transition-all duration-200 ${
-        onClick ? 'cursor-pointer hover:shadow-elevated hover:border-parikalp-primary/40' : ''
+      className={`bg-white rounded-xl border border-slate-200 p-5 shadow-card transition-all duration-200 transform hover:-translate-y-0.5 ${borderTopVariants[variant]} ${
+        onClick ? 'cursor-pointer hover:shadow-elevated' : ''
       }`}
     >
       <div className="flex items-start justify-between">

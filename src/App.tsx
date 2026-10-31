@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { AccessibilityProvider } from './context/AccessibilityContext';
 import { AuthProvider } from './context/AuthContext';
 import { NotificationProvider } from './context/NotificationContext';
 import { ParikalpDataProvider } from './context/ParikalpDataContext';
@@ -28,10 +29,11 @@ import { Settings } from './pages/Settings';
 export const App: React.FC = () => {
   return (
     <BrowserRouter>
-      <NotificationProvider>
-        <AuthProvider>
-          <ParikalpDataProvider>
-            <Routes>
+      <AccessibilityProvider>
+        <NotificationProvider>
+          <AuthProvider>
+            <ParikalpDataProvider>
+              <Routes>
               {/* Standalone Login Screen */}
               <Route path="/login" element={<Login />} />
 
@@ -62,7 +64,8 @@ export const App: React.FC = () => {
           </ParikalpDataProvider>
         </AuthProvider>
       </NotificationProvider>
-    </BrowserRouter>
+    </AccessibilityProvider>
+  </BrowserRouter>
   );
 };
 
