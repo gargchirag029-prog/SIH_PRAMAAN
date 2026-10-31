@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { authService, ROLE_PERMISSIONS } from '../services/authService';
 import { useNotification } from '../context/NotificationContext';
@@ -11,6 +11,7 @@ import {
   ShieldCheck,
   Sparkles,
   ArrowRight,
+  ArrowLeft,
   Lock,
   Mail,
   KeyRound,
@@ -56,7 +57,7 @@ export const Login: React.FC = () => {
     setCaptchaInput(code);
   };
 
-  // Instant Demo Login (1-Click for SIH Judges)
+  // Instant Demo Login (1-Click Role Switch)
   const handleQuickDemoLogin = (role: UserRole) => {
     switchRole(role);
     showToast(
@@ -136,12 +137,13 @@ export const Login: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-3 text-xs">
-            <span className="hidden sm:inline text-slate-500 font-medium">
-              Smart India Hackathon 2026 • Problem ID: <strong>26265</strong>
-            </span>
-            <span className="px-2.5 py-1 rounded-full bg-slate-100 text-mygov-blue border border-slate-300 text-[11px] font-bold">
-              Team ID: 199059
-            </span>
+            <Link
+              to="/"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-300 bg-white hover:bg-slate-50 text-slate-700 font-bold text-xs transition-colors shadow-2xs"
+            >
+              <ArrowLeft className="w-3.5 h-3.5 text-slate-500" />
+              <span>Back to Portal</span>
+            </Link>
           </div>
         </div>
       </header>

@@ -137,8 +137,8 @@ export const translations: Record<string, { en: string; hi: string }> = {
     hi: 'यह वेबसाइट अखिल भारतीय तकनीकी शिक्षा परिषद (एआईसीटीई), शिक्षा मंत्रालय, भारत सरकार के लिए विकसित और तैनात की गई है।',
   },
   nicHosting: {
-    en: 'Hosted on National Informatics Centre (NIC) MeghRaj Cloud Infrastructure • Built for Smart India Hackathon 2026.',
-    hi: 'राष्ट्रीय सूचना विज्ञान केंद्र (एनआईसी) मेघराज क्लाउड अवसंरचना पर होस्ट किया गया • स्मार्ट इंडिया हैकथॉन 2026 के लिए निर्मित।',
+    en: 'Hosted on National Informatics Centre (NIC) MeghRaj Cloud Infrastructure • High-Availability Regulatory Cluster.',
+    hi: 'राष्ट्रीय सूचना विज्ञान केंद्र (एनआईसी) मेघराज क्लाउड अवसंरचना पर होस्ट किया गया • उच्च-उपलब्धता नियामक क्लस्टर।',
   },
 };
 

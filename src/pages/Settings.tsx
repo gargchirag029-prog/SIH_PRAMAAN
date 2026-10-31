@@ -59,7 +59,7 @@ export const Settings: React.FC = () => {
         <div className="flex items-center gap-2">
           <Sparkles className="w-5 h-5 text-amber-400" />
           <h3 className="text-base font-bold text-white">
-            Smart India Hackathon 2026 • 15-Step Interactive Jury Walkthrough
+            PRAMAAN • 15-Step Interactive Regulatory Lifecycle Walkthrough
           </h3>
         </div>
         <p className="text-xs text-slate-300 leading-relaxed max-w-3xl">
