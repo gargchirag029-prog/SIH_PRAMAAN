@@ -1101,7 +1101,7 @@ export const INITIAL_AUDIT_LOGS: AuditLogEntry[] = [
     id: 'aud-002',
     timestamp: '2026-10-24 14:40:02',
     userId: 'SYSTEM_CRON',
-    userName: 'PARIKALP Automated Intake Service',
+    userName: 'PRAMAAN Automated Intake Service',
     userRole: 'SYSTEM_CRON',
     action: 'AI_VERIFICATION_EXECUTED',
     applicationRef: 'AICTE/NWRO/2026/APP-8492',

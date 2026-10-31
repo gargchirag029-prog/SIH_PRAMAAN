@@ -18,7 +18,7 @@ export const Settings: React.FC = () => {
   const rules = alertService.getRules();
 
   const handleReset = () => {
-    if (window.confirm('Reset PARIKALP to the fresh 15-step Smart India Hackathon demo dataset?')) {
+    if (window.confirm('Reset PRAMAAN to the fresh 15-step demonstration dataset?')) {
       resetDemoData();
       showToast('info', 'Store Reset', 'Demo data re-initialized.');
     }
@@ -63,7 +63,7 @@ export const Settings: React.FC = () => {
           </h3>
         </div>
         <p className="text-xs text-slate-300 leading-relaxed max-w-3xl">
-          PARIKALP is configured with pre-seeded test records allowing you to demonstrate the complete regulatory lifecycle in under 3 minutes:
+          PRAMAAN is configured with pre-seeded test records allowing you to demonstrate the complete regulatory lifecycle in under 3 minutes:
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs pt-2">

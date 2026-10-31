@@ -52,20 +52,24 @@ export const Navbar: React.FC<{ onToggleSidebar: () => void }> = ({ onToggleSide
             </button>
 
             <Link to="/" className="flex items-center gap-3 group">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-mygov-blue to-mygov-navy flex items-center justify-center text-white font-black text-xl shadow-sm border border-blue-400/20 group-hover:scale-105 transition-transform">
-                प
-              </div>
+              <img
+                src="/pramaan-logo.jpg"
+                alt="PRAMAAN Logo"
+                className="h-10 w-auto max-w-[120px] object-contain rounded-lg border border-slate-200/80 shadow-xs group-hover:scale-105 transition-transform bg-white"
+              />
               <div>
                 <div className="flex items-center gap-2">
                   <span className="text-xl font-extrabold text-mygov-navy tracking-tight">
-                    PARIKALP
+                    PRAMAAN
                   </span>
                   <span className="bg-orange-100 text-mygov-orange text-[10px] font-black px-2 py-0.5 rounded-full border border-orange-200">
                     AICTE • MyGov
                   </span>
                 </div>
                 <p className="text-[11px] text-slate-500 font-medium tracking-tight line-clamp-1">
-                  परिकल्प • Institutional Approval & Continuous Compliance Ecosystem
+                  {language === 'hi'
+                    ? 'प्रमाण • संस्थागत अनुमोदन एवं सतत अनुपालन प्रणाली'
+                    : 'प्रमाण • AICTE Approval Workflow & Compliance Monitoring'}
                 </p>
               </div>
             </Link>

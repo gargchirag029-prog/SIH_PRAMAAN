@@ -20,12 +20,12 @@ export const FAQAccordion: React.FC = () => {
   const faqs: FAQItem[] = [
     {
       category: 'DOCUMENT INTELLIGENCE',
-      questionEn: 'How does the PARIKALP AI Document Intelligence pipeline operate?',
-      questionHi: 'परिकल्प एआई दस्तावेज़ सत्यापन पाइपलाइन कैसे कार्य करती है?',
+      questionEn: 'How does the PRAMAAN AI Document Intelligence pipeline operate?',
+      questionHi: 'प्रमाण (PRAMAAN) एआई दस्तावेज़ सत्यापन पाइपलाइन कैसे कार्य करती है?',
       answerEn:
-        'PARIKALP uses an automated multi-stage computer vision and OCR pipeline. Upon document ingestion into the private object storage, the system executes layout classification, extracts text, cross-references land/building/cadre data against the AICTE Approval Process Handbook (APH 2026-27), checks date stamp metadata to detect tampering signals, and presents verification results to the scrutiny officer as GREEN (passed), AMBER (requires review), or RED (discrepancy detected).',
+        'PRAMAAN uses an automated multi-stage computer vision and OCR pipeline. Upon document ingestion into the private object storage, the system executes layout classification, extracts text, cross-references land/building/cadre data against the AICTE Approval Process Handbook (APH 2026-27), checks date stamp metadata to detect tampering signals, and presents verification results to the scrutiny officer as GREEN (passed), AMBER (requires review), or RED (discrepancy detected).',
       answerHi:
-        'परिकल्प एक बहु-चरणीय कंप्यूटर विज़न और ओसीआर पाइपलाइन का उपयोग करता है। निजी ऑब्जेक्ट स्टोरेज में दस्तावेज़ अपलोड होते ही, प्रणाली लेआउट का वर्गीकरण करती है, टेक्स्ट निकालती है, एआईसीटीई अनुमोदन नियमावली (APH 2026-27) के अनुसार भूमि, भवन और संकाय डेटा का मिलान करती है, और संवीक्षा अधिकारी के समक्ष हरा (मान्य), पीला (समीक्षा आवश्यक), या लाल (विसंगति) के रूप में परिणाम प्रस्तुत करती है।',
+        'प्रमाण (PRAMAAN) एक बहु-चरणीय कंप्यूटर विज़न और ओसीआर पाइपलाइन का उपयोग करता है। निजी ऑब्जेक्ट स्टोरेज में दस्तावेज़ अपलोड होते ही, प्रणाली लेआउट का वर्गीकरण करती है, टेक्स्ट निकालती है, एआईसीटीई अनुमोदन नियमावली (APH 2026-27) के अनुसार भूमि, भवन और संकाय डेटा का मिलान करती है, और संवीक्षा अधिकारी के समक्ष हरा (मान्य), पीला (समीक्षा आवश्यक), या लाल (विसंगति) के रूप में परिणाम प्रस्तुत करती है।',
     },
     {
       category: 'DISCREPANCIES & APPEALS',
@@ -41,9 +41,9 @@ export const FAQAccordion: React.FC = () => {
       questionEn: 'How does automated Conflict of Interest screening work for EVC appointments?',
       questionHi: 'विशेषज्ञ समिति (EVC) गठन में हितों के टकराव (Conflict of Interest) की जांच कैसे होती है?',
       answerEn:
-        'Before any Expert Visit Committee (EVC) is confirmed, PARIKALP runs an algorithmic conflict check cross-referencing candidate experts against institutional alumni registers, previous employment records, consultancy disclosures, and regional proximity. Only unconflicted academicians and CPWD representatives are scheduled.',
+        'Before any Expert Visit Committee (EVC) is confirmed, PRAMAAN runs an algorithmic conflict check cross-referencing candidate experts against institutional alumni registers, previous employment records, consultancy disclosures, and regional proximity. Only unconflicted academicians and CPWD representatives are scheduled.',
       answerHi:
-        'किसी भी विशेषज्ञ दौरा समिति (EVC) की पुष्टि से पहले, परिकल्प पूर्व छात्रों की सूची, पूर्व रोजगार रिकॉर्ड, परामर्श संबंधों और क्षेत्रीय निकटता के आधार पर स्वचालित जांच करता है। केवल स्वतंत्र एवं निष्पक्ष वरिष्ठ शिक्षाविदों और सीपीडब्ल्यूडी प्रतिनिधियों को ही समिति में नियुक्त किया जाता है।',
+        'किसी भी विशेषज्ञ दौरा समिति (EVC) की पुष्टि से पहले, प्रमाण (PRAMAAN) पूर्व छात्रों की सूची, पूर्व रोजगार रिकॉर्ड, परामर्श संबंधों और क्षेत्रीय निकटता के आधार पर स्वचालित जांच करता है। केवल स्वतंत्र एवं निष्पक्ष वरिष्ठ शिक्षाविदों और सीपीडब्ल्यूडी प्रतिनिधियों को ही समिति में नियुक्त किया जाता है।',
     },
     {
       category: 'SLA ESCALATION',
@@ -59,9 +59,9 @@ export const FAQAccordion: React.FC = () => {
       questionEn: 'How does Continuous Compliance Monitoring function after initial approval?',
       questionHi: 'प्रारंभिक अनुमोदन प्राप्त होने के बाद सतत अनुपालन निगरानी कैसे काम करती है?',
       answerEn:
-        'Unlike legacy portals where compliance ends at the initial approval date, PARIKALP maintains active surveillance over perpetual lease validity, fire NOC renewals, FDR maturity countdowns (with 9-month advance alerts), and faculty biometric ratios throughout the academic year. Deficiencies trigger automated show-cause notices.',
+        'Unlike legacy portals where compliance ends at the initial approval date, PRAMAAN maintains active surveillance over perpetual lease validity, fire NOC renewals, FDR maturity countdowns (with 9-month advance alerts), and faculty biometric ratios throughout the academic year. Deficiencies trigger automated show-cause notices.',
       answerHi:
-        'पारंपरिक व्यवस्था के विपरीत जहाँ अनुमोदन के बाद निगरानी समाप्त हो जाती थी, परिकल्प पूरे शैक्षणिक वर्ष में भूमि लीज की वैधता, फायर एनओसी नवीनीकरण, सावधि जमा (FDR) परिपक्वता (9 महीने पूर्व अग्रिम चेतावनी) और बायोमेट्रिक उपस्थिति पर निरंतर नज़र रखता है।',
+        'पारंपरिक व्यवस्था के विपरीत जहाँ अनुमोदन के बाद निगरानी समाप्त हो जाती थी, प्रमाण (PRAMAAN) पूरे शैक्षणिक वर्ष में भूमि लीज की वैधता, फायर एनओसी नवीनीकरण, सावधि जमा (FDR) परिपक्वता (9 महीने पूर्व अग्रिम चेतावनी) और बायोमेट्रिक उपस्थिति पर निरंतर नज़र रखता है।',
     },
   ];
 

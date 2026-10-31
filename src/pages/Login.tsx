@@ -62,7 +62,7 @@ export const Login: React.FC = () => {
     showToast(
       'success',
       'Authenticated Successfully',
-      `Logged in as ${role.toUpperCase()} Portal. Welcome to PARIKALP.`
+      `Logged in as ${role.toUpperCase()} Portal. Welcome to PRAMAAN.`
     );
     if (role === 'institution') navigate('/institution-portal');
     else if (role === 'officer') navigate('/officer-portal');
@@ -115,22 +115,22 @@ export const Login: React.FC = () => {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-full bg-amber-50 border border-amber-300 flex items-center justify-center shadow-xs">
-              <svg className="w-5 h-5 text-amber-800" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2L14.5 7.5L20 9L16 13L17 19L12 16.5L7 19L8 13L4 9L9.5 7.5L12 2Z" />
-              </svg>
-            </div>
+            <img
+              src="/pramaan-logo.jpg"
+              alt="PRAMAAN Logo"
+              className="h-10 w-auto object-contain rounded border border-slate-200 bg-white p-0.5 shadow-2xs"
+            />
             <div>
               <div className="flex items-center gap-2">
                 <span className="font-extrabold text-base tracking-tight text-slate-900">
-                  PARIKALP • परिकल्प
+                  PRAMAAN • प्रमाण
                 </span>
                 <span className="bg-orange-100 text-mygov-orange text-[10px] font-bold px-2 py-0.5 rounded-full border border-orange-200">
                   MeriPehchan SSO
                 </span>
               </div>
               <p className="text-[11px] text-slate-500 font-medium">
-                Department of Higher Education • Ministry of Education, Government of India
+                AICTE Approval Workflow & Compliance Monitoring • Ministry of Education
               </p>
             </div>
           </div>
@@ -570,7 +570,7 @@ export const Login: React.FC = () => {
 
       {/* Footer */}
       <footer className="p-4 border-t border-slate-200 bg-white text-center text-xs text-slate-500 relative z-10">
-        PARIKALP — One Platform. Smarter Approvals. Continuous Compliance. Transparent Governance. • Smart India Hackathon 2026
+        PRAMAAN — Integrated AICTE Approval Workflow Automation & Compliance Monitoring System
       </footer>
     </div>
   );

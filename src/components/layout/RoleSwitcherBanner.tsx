@@ -101,7 +101,7 @@ export const RoleSwitcherBanner: React.FC = () => {
           {/* Reset Demo Data Button */}
           <button
             onClick={() => {
-              if (window.confirm('Reset all PARIKALP state to default demonstration dataset?')) {
+              if (window.confirm('Reset all PRAMAAN state to default demonstration dataset?')) {
                 resetDemoData();
               }
             }}

@@ -22,8 +22,8 @@ export const GovHeader: React.FC = () => {
     } else {
       const announcement =
         language === 'hi'
-          ? 'अखिल भारतीय तकनीकी शिक्षा परिषद, शिक्षा मंत्रालय, भारत सरकार का परिकल्प अनुमोदन पोर्टल।'
-          : 'All India Council for Technical Education, Ministry of Education, Government of India. Welcome to PARIKALP Approval Portal.';
+          ? 'अखिल भारतीय तकनीकी शिक्षा परिषद, शिक्षा मंत्रालय, भारत सरकार का प्रमाण अनुमोदन पोर्टल।'
+          : 'All India Council for Technical Education, Ministry of Education, Government of India. Welcome to PRAMAAN Approval Portal.';
       speakText(announcement);
     }
   };
@@ -64,15 +64,6 @@ export const GovHeader: React.FC = () => {
           </div>
         </div>
 
-        {/* Center: SIH 2026 Smart Automation Badge */}
-        <div className="hidden xl:flex items-center gap-2 bg-gradient-to-r from-amber-50 to-orange-50 text-slate-800 px-3 py-1 rounded-full border border-orange-200/80 shadow-xs text-[11px]">
-          <span className="w-2 h-2 rounded-full bg-mygov-orange animate-pulse"></span>
-          <span className="font-bold text-mygov-orange">Smart India Hackathon 2026</span>
-          <span className="text-slate-300">•</span>
-          <span className="font-medium text-slate-700">Problem ID: <strong>26265</strong></span>
-          <span className="text-slate-300">•</span>
-          <span className="font-semibold text-slate-900">Team PARIKALP (ID: 199059)</span>
-        </div>
 
         {/* Right: GIGW 3.0 / MyGov.in Accessibility Toolbar */}
         <div className="flex items-center gap-3 text-[11px] text-slate-600">

@@ -56,7 +56,7 @@ export const Reports: React.FC = () => {
     const csv = 'data:text/csv;charset=utf-8,' + [headers.join(','), ...rows.map(e => e.join(','))].join('\n');
     const link = document.createElement('a');
     link.href = encodeURI(csv);
-    link.download = `AICTE_PARIKALP_Executive_Report_${new Date().toISOString().split('T')[0]}.csv`;
+    link.download = `AICTE_PRAMAAN_Executive_Report_${new Date().toISOString().split('T')[0]}.csv`;
     link.click();
   };
 

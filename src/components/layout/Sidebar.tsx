@@ -216,15 +216,17 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
         {/* Sidebar Header */}
         <div className="p-4 border-b border-slate-200 flex items-center justify-between bg-slate-50/70">
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg bg-mygov-blue flex items-center justify-center text-white font-black text-sm shadow-xs">
-              प
-            </div>
+            <img
+              src="/pramaan-logo.jpg"
+              alt="PRAMAAN Logo"
+              className="h-8 w-auto max-w-[90px] object-contain rounded border border-slate-200/80 bg-white p-0.5 shadow-2xs"
+            />
             <div>
               <span className="font-extrabold text-sm text-slate-900 tracking-tight block">
-                PARIKALP
+                PRAMAAN
               </span>
               <span className="text-[10px] text-slate-500 font-medium">
-                AICTE Approval Hub
+                {language === 'hi' ? 'प्रमाण • एआईसीटीई हब' : 'AICTE Approval Hub'}
               </span>
             </div>
           </div>

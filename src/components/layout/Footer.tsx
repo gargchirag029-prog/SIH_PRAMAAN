@@ -20,12 +20,14 @@ export const Footer: React.FC = () => {
           {/* Col 1: Platform Branding & Mission */}
           <div className="lg:col-span-2 space-y-3">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-mygov-orange to-amber-600 flex items-center justify-center text-white font-black text-lg shadow-md">
-                प
-              </div>
+              <img
+                src="/pramaan-logo.jpg"
+                alt="PRAMAAN Logo"
+                className="h-11 w-auto object-contain rounded-lg bg-white p-1 shadow-md border border-white/20"
+              />
               <div>
                 <span className="text-white font-extrabold text-base tracking-tight block">
-                  PARIKALP • {isHi ? 'परिकल्प' : 'AICTE Regulatory Platform'}
+                  PRAMAAN • {isHi ? 'प्रमाण' : 'AICTE Regulatory Platform'}
                 </span>
                 <span className="text-[11px] text-orange-400 font-semibold">
                   {isHi
@@ -38,14 +40,13 @@ export const Footer: React.FC = () => {
             <p className="text-[11px] text-slate-300 leading-relaxed pr-4">
               {isHi ? (
                 <>
-                  परिकल्प <strong className="text-white">स्मार्ट इंडिया हैकथॉन 2026 (समस्या आईडी: 26265)</strong> के लिए
-                  विकसित एक राष्ट्रीय स्तर का नियामक सास (SaaS) प्लेटफॉर्म है। यह स्वचालित रूटिंग, एआई दस्तावेज़ सत्यापन,
-                  हितों के टकराव रहित ईवीसी गठन और 3-स्तरीय एसएलए एस्केलेशन के माध्यम से संस्थागत पेंडेंसी को समाप्त करता है।
+                  प्रमाण (PRAMAAN) तकनीकी संस्थानों के लिए एक राष्ट्रीय स्तर का नियामक सास (SaaS) प्लेटफॉर्म है।
+                  यह स्वचालित रूटिंग, एआई दस्तावेज़ सत्यापन, हितों के टकराव रहित ईवीसी गठन और 3-स्तरीय एसएलए एस्केलेशन
+                  के माध्यम से संस्थागत पेंडेंसी को समाप्त करता है।
                 </>
               ) : (
                 <>
-                  PARIKALP is a national-scale regulatory SaaS architecture developed for the{' '}
-                  <strong className="text-white">Smart India Hackathon 2026 (Problem Statement ID: 26265)</strong>.
+                  PRAMAAN is a national-scale regulatory SaaS architecture for technical institutions.
                   It eliminates institutional pendency through automated routing, AI document verification,
                   unconflicted EVC constitution, and 3-tier SLA escalation.
                 </>

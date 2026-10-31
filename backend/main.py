@@ -28,8 +28,8 @@ except ImportError:
     )
 
 app = FastAPI(
-    title="PARIKALP API — AICTE Approval Workflow Automation & Continuous Compliance",
-    description="Smart India Hackathon 2026 | Problem Statement 26265 | Team PARIKALP (Team ID: 199059)",
+    title="PRAMAAN API — AICTE Approval Workflow Automation & Continuous Compliance",
+    description="PRAMAAN: Integrated AICTE Approval Workflow Automation, Compliance Monitoring and Alert Management System",
     version="2.6.0",
 )
 
