@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary-blue: #1456A0;
+    --dark-navy: #102C50;
+    --bg-page: #F4F7FB;
+    --surface: #FFFFFF;
+    --light-blue: #E5F0FA;
+    --success-green: #16A36A;
+    --warning-amber: #E9A126;
+    --critical-red: #DC3545;
+    --text-primary: #172B45;
+    --text-secondary: #64748B;
+  }
+
+  body {
+    background-color: #F4F7FB;
+    color: #172B45;
+    font-family: 'DM Sans', 'Inter', system-ui, -apple-system, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  #root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    max-width: 100%;
+  }
+
+  /* Custom scrollbar for enterprise tables and panels */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #F1F5F9;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #CBD5E1;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #94A3B8;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .pill {
+    @apply inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-semibold tracking-wide transition-all;
+  }
+  .pill-accent {
+    @apply bg-parikalp-primary text-white shadow-sm;
+  }
+  .pill-warm {
+    @apply bg-parikalp-amber text-slate-900 font-bold shadow-sm;
+  }
+  .pill-outline {
+    @apply border border-parikalp-primary/40 text-parikalp-primary bg-parikalp-lightblue/50;
+  }
+  .pill-success {
+    @apply bg-emerald-50 text-emerald-700 border border-emerald-200;
+  }
+
+  .scan-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #1456A0;
+    box-shadow: 0 0 15px #1456A0;
+    animation: scan 3s linear infinite;
+  }
+
+  @keyframes scan {
+    0% { top: 0%; }
+    50% { top: 100%; }
+    100% { top: 0%; }
+  }
+
+  .pulse-hotspot {
+    animation: pulseHotspot 2s ease infinite;
+  }
+
+  @keyframes pulseHotspot {
+    0%, 100% {
+      box-shadow: 0 0 0 0 rgba(20, 86, 160, 0.6);
+    }
+    50% {
+      box-shadow: 0 0 0 12px rgba(20, 86, 160, 0);
+    }
+  }
+}
